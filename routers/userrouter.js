@@ -16,14 +16,14 @@ var transporter = nodemailer.createTransport({
     port: 587,
     service: "gmail",
     auth: {
-      user: 'staffy7508@gmail.com', 
+      user: 'staffynodemailer@gmail.com', 
       pass: '*********' 
     },
   });
 app.post("/sendmail",(req,res)=>{
     var {too,sub,msg}=req.body;
     var info =transporter.sendMail({
-        from: 'staffy7508@gmail.com',
+        from: 'staffynodemailer@gmail.com',
         to: too,
         subject: sub,
         text: msg ,
@@ -48,7 +48,7 @@ app.post("/sendmail",(req,res)=>{
         arr.forEach(x => {
           console.log(x.too);
           transporter.sendMail({
-              from: 'staffy7508@gmail.com',
+              from: 'staffynodemailer@gmail.com',
               to: x.too,
               subject: sub,
               text: msg ,
